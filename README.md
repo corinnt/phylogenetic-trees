@@ -24,17 +24,17 @@ to visualize the clustering pattern.
 
 ### Example:
 
-*sample.dist*
+*distance matrix sample.dist*
 
-a b 1
+a b 1.5
 
-a c 1
+a c 1.5
 
-b c 1
+b c 1.5
 
 
 
-*terminal output*
+*output in terminal*
 
 ((a,b),c)
 
