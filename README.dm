@@ -1,4 +1,5 @@
-No known bugs. 
+Brown CSCI1810 Project 3 Phylogenetic Tree Generator.
+An implementation of the UPGMA clustering algorithm. No known bugs. 
 
 Usage: 
 
@@ -12,3 +13,21 @@ Output:
 terminal: clustering pattern following lexicographic order for ties
 output.dot: Graphviz instructions for a rooted ultrametric binary tree 
 to visualize the clustering pattern.
+
+Example:
+
+sample.dist
+a b 1
+a c 1
+b c 1
+
+terminal output
+((a,b),c)
+
+output.dot
+graph tree {
+	a0 -- ac1
+	c0 -- ac1
+	ac1 -- acb2
+	b0 -- acb2
+}
