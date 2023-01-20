@@ -26,10 +26,13 @@ b c 1
 
 
 *terminal output*
+
 ((a,b),c)
 
-*output.dot*
+*output in .dot file*
+
 graph tree {
+
 a0 -- ac1
 	
 c0 -- ac1
