@@ -34,7 +34,8 @@ b c 1.5
 
 *output in terminal*
 
-```((a,b),c)```
+```((a,b),c)
+```
 
 
 
