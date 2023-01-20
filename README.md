@@ -34,11 +34,11 @@ b c 1.5
 
 *output in terminal*
 
->((a,b),c)
+```((a,b),c)```
 
 
 
-*output in .dot file*
+*output in given .dot file*
 
 ```
 graph tree {
