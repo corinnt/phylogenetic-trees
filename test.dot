@@ -1,4 +1,0 @@
-graph tree {
-	a0 -- ab1
-	b0 -- ab1
-}
