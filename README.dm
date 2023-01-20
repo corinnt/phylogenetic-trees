@@ -1,20 +1,21 @@
-Brown CSCI1810 Project 3 Phylogenetic Tree Generator.
+#Phylogenetic Tree Generator
+##Brown CSCI1810 Project 3 
 An implementation of the UPGMA clustering algorithm. No known bugs. 
 
-Usage: 
+###Usage: 
 
 Run using the following command: 
     > sh upgma.sh sample.dist output.dot
 where sample.dist will be a distance matrix and output.dot will be the filepath of the DOT
 output file.
 
-Output: 
+###Output: 
 
 terminal: clustering pattern following lexicographic order for ties
 output.dot: Graphviz instructions for a rooted ultrametric binary tree 
 to visualize the clustering pattern.
 
-Example:
+###Example:
 
 sample.dist
 a b 1
