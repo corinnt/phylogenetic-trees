@@ -25,13 +25,11 @@ to visualize the clustering pattern.
 ### Example:
 
 *distance matrix sample.dist*
-
->a b 1.5
-
->a c 1.5
-
->b c 1.5
-
+```
+a b 1.5
+a c 1.5
+b c 1.5
+```
 
 
 *output in terminal*
@@ -42,14 +40,11 @@ to visualize the clustering pattern.
 
 *output in .dot file*
 
->graph tree {
-
->a0 -- ac1
-	
->c0 -- ac1
-	
->ac1 -- acb2
-	
->b0 -- acb2
-	
->}
+```
+graph tree {
+a0 -- ac1	
+c0 -- ac1	
+ac1 -- acb2	
+b0 -- acb2	
+}
+```
