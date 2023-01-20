@@ -42,9 +42,9 @@ b c 1.5
 
 ```
 graph tree {
-a0 -- ac1	
-c0 -- ac1	
-ac1 -- acb2	
-b0 -- acb2	
+    a0 -- ac1	
+    c0 -- ac1	
+    ac1 -- acb2	
+    b0 -- acb2	
 }
 ```
