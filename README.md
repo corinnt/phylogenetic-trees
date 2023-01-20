@@ -18,7 +18,6 @@ to visualize the clustering pattern.
 ### Example:
 
 *sample.dist*
-
 a b 1
 
 a c 1
@@ -31,13 +30,12 @@ b c 1
 
 *output.dot*
 graph tree {
-
-	a0 -- ac1
+a0 -- ac1
 	
-	c0 -- ac1
+c0 -- ac1
 	
-	ac1 -- acb2
+ac1 -- acb2
 	
-	b0 -- acb2
+b0 -- acb2
 	
 }
