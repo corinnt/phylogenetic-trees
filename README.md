@@ -17,15 +17,15 @@ to visualize the clustering pattern.
 
 ### Example:
 
-sample.dist
+* *sample.dist * *
 a b 1
 a c 1
 b c 1
 
-terminal output
+* *terminal output* *
 ((a,b),c)
 
-output.dot
+* *output.dot* *
 graph tree {
 	a0 -- ac1
 	c0 -- ac1
