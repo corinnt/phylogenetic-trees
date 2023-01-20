@@ -28,28 +28,28 @@ to visualize the clustering pattern.
 
 >a b 1.5
 
-a c 1.5
+>a c 1.5
 
-b c 1.5
+>b c 1.5
 
 
 
 *output in terminal*
 
-((a,b),c)
+>((a,b),c)
 
 
 
 *output in .dot file*
 
-graph tree {
+>graph tree {
 
-a0 -- ac1
+>a0 -- ac1
 	
-c0 -- ac1
+>c0 -- ac1
 	
-ac1 -- acb2
+>ac1 -- acb2
 	
-b0 -- acb2
+>b0 -- acb2
 	
-}
+>}
