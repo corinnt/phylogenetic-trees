@@ -29,6 +29,7 @@ b c 1
 
 ((a,b),c)
 
+
 *output in .dot file*
 
 graph tree {
