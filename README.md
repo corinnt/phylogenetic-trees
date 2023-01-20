@@ -16,6 +16,7 @@ output file.
 ### Output: 
 
 terminal: clustering pattern following lexicographic order for ties
+
 output.dot: Graphviz instructions for a rooted ultrametric binary tree 
 to visualize the clustering pattern.
 
