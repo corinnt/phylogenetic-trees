@@ -18,6 +18,7 @@ to visualize the clustering pattern.
 ### Example:
 
 *sample.dist*
+
 a b 1
 
 a c 1
@@ -25,9 +26,11 @@ a c 1
 b c 1
 
 
+
 *terminal output*
 
 ((a,b),c)
+
 
 
 *output in .dot file*
