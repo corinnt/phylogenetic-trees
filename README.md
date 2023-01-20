@@ -26,7 +26,7 @@ to visualize the clustering pattern.
 
 *distance matrix sample.dist*
 
-a b 1.5
+>a b 1.5
 
 a c 1.5
 
