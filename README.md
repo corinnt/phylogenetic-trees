@@ -1,5 +1,5 @@
 # Phylogenetic Tree Generator
-## Brown CSCI1810 Project 3 
+## Brown University CSCI1810 - Project 3 
 An implementation of the UPGMA clustering algorithm. No known bugs. 
 
 ### Usage: 
