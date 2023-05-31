@@ -8,7 +8,7 @@ Run using the following command:
 
     > sh upgma.sh sample.dist output.dot
     
-where sample.dist will be a distance matrix and output.dot will be the filepath of the DOT
+where `sample.dist` will be a distance matrix and `output.dot` will be the filepath of the DOT
 output file.
 
 
@@ -20,11 +20,9 @@ terminal: clustering pattern following lexicographic order for ties
 output.dot: Graphviz instructions for a rooted ultrametric binary tree 
 to visualize the clustering pattern.
 
-
-
 ### Example:
 
-*distance matrix sample.dist*
+*distance matrix `sample.dist`*
 ```
 a b 1.5
 a c 1.5
