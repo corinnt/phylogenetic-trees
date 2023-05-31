@@ -1,4 +1,6 @@
 graph tree {
 	a0 -- ab1
 	b0 -- ab1
+	ab1 -- abc2
+	c0 -- abc2
 }

@@ -9,20 +9,25 @@ class Edge:
 
     Fields:
         distance : float - distance (physical or evolutionary) between nodes
-        node1 : str - node1 and node2 ordered st that node1 < node2
+        node1 : str - node1 and node2 ordered st that node1 < node2 lexographically
         node2 : str
     """
   # constructor
     def __init__(self, dist, n1, n2):
+        """ Constructor for class Edge to represent the distance between two nodes.
+
+            :param dist: float distance between the two nodes
+            :param n1: string rep of first node
+            :param n2: string rep of second node
+        """
         self.distance = dist
         self.node1 = n1
         self.node2 = n2
   
    # override the comparison operator
     def __lt__(self, nxt):
-        """
-        Returns true if first Edge has lower distance
-        If tied for distance, returns true for first lexicographically less than second
+        """ Returns true if first Edge has lower distance
+            If tied for distance, returns true for first lexicographically less than second
         """
         if self.distance == nxt.distance:
             return str(order_pair(self.node1, self.node2)) <\
@@ -32,20 +37,21 @@ class Edge:
 
 class NodeInfo:
     """
-    - class to contain data accumulated bout a node
-    - used as values in node_dict mapping node names with commas + parens
-      to NodeInfo objects
-
-    Parameters:
-    size : int - number of nodes contained within the node
-    level : int - upgma height
-    name : str - shorthand name for the node (ie no parentheses and commas)
+        class NodeInfo to contain data accumulated about a node/cluster
+        used as values in node_dict mapping node names with commas + parens
+        to NodeInfo objects
     """
     #constructor
-    def __init__(self, num, lev, nam):
-        self.size = num
-        self.level = lev
-        self.name = nam
+    def __init__(self, size, level, name):
+        """ Constructor for class to contain data accumulated about a node
+
+            :param size: int - number of nodes contained within this node/cluster
+            :param level: int - upgma height for DOT diagram
+            :param name: str - shorthand name for the node (ie no parentheses and commas)
+        """
+        self.size = size
+        self.level = level
+        self.name = name
 
 def parse_args():
     """
@@ -66,11 +72,10 @@ def parse_args():
 
 def order_pair(node1, node2):
     """
-    Consumes 2 nodes, returns them in lexicographic order
+    Consumes 2 nodes, returns them as a tuple in lexicographic order
 
-    Parameters:
-        node1 : str
-        node2 : str
+        :param node1: - str
+        :param node2: - str
 
     Returns
         ordered_pair : tuple(str, str)
@@ -81,23 +86,19 @@ def order_pair(node1, node2):
         ordered_pair = (node2, node1)
     return ordered_pair
 
-def instantiate(distances):
-    """
-    Consumes list of distances, returns data structures to be used in neighbor-joining.
+def instantiate_distances(distances):
+    """ Consumes list of distances, returns data structures to be used in neighbor-joining.
 
-    Parameters:
-        distances : list(str) representing pairwise distances
+        :param distances: list(str) representing pairwise distances
 
     Returns: 
         distance_heap : heapq of Edges sorted by distance
         node_dict : dict[str, NodeInfo] mapping each cluster to number of member nodes
         distance_dict : dict[(str, str), float] mapping tuple of nodes to distance
-                                                between them
+                                                between the members of the pair
 
     """
-    distance_heap = []
-    node_dict = {}
-    dist_dict = {}
+    distance_heap, node_dict, dist_dict = [], {}, {}
 
     for dist in distances:
         nodes_dist = dist.split()
@@ -119,10 +120,10 @@ def calc_distance(node, union, node_dict, dist_dict):
     Calculates the distance between a given node and the newly unioned node
     
     Parameters: 
-        node : str
-        union : Edge
-        node_dict : dict[node: num_items]
-        dist_dict : dict[(node1, node2): distance]
+        :param node: - str rep of any node
+        :param union: - Edge that has just been added to the graph
+        :param node_dict: - dict[node: NodeInfo] mapping string node to it's NodeInfo
+        :param dist_dict: - dict[(node1, node2): distance] mapping pair to the distance between them
 
     Returns:
         distance : float
@@ -209,11 +210,9 @@ def add_graph_cluster(dot_output, cluster, node_dict):
     Returns: 
         updated Graph object with edges from latest cluster
     """
-    node1 = cluster.node1
-    node2 = cluster.node2
+    node1, node2 = cluster.node1, cluster.node2
+    node1_level, node2_level  = node_dict[node1].level, node_dict[node2].level
 
-    node1_level = node_dict[node1].level
-    node2_level = node_dict[node2].level
     cluster_name = "(" + cluster.node1 + "," + cluster.node2 + ")"
     union_level = node_dict[cluster_name].level
     union_name = node_dict[cluster_name].name + str(union_level)
@@ -237,7 +236,7 @@ def main(distances, output_file):
     Prints clustering pattern to terminal
     Writes a phylogenetic treeg in DOT format to input .dot file 
     """
-    distance_heap, node_dict, distance_dict = instantiate(distances)
+    distance_heap, node_dict, distance_dict = instantiate_distances(distances)
     dot_output = graphviz.Graph('tree')
     while len(node_dict) > 1:
         cluster = hq.heappop(distance_heap)
