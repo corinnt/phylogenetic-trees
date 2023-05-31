@@ -4,9 +4,9 @@ An implementation of the UPGMA clustering algorithm. No known bugs.
 
 ### Usage: 
 
-Run using the following command: 
+Run with command: 
 
-    > sh upgma.sh sample.dist output.dot
+    sh upgma.sh sample.dist output.dot
     
 where `sample.dist` will be a distance matrix and `output.dot` will be the filepath of the DOT
 output file.
@@ -15,9 +15,9 @@ output file.
 
 ### Output: 
 
-terminal: clustering pattern following lexicographic order for ties
+to terminal: clustering pattern following lexicographic order for ties
 
-output.dot: Graphviz instructions for a rooted ultrametric binary tree 
+to output.dot: Graphviz instructions for a rooted ultrametric binary tree 
 to visualize the clustering pattern.
 
 ### Example:
@@ -38,7 +38,7 @@ b c 1.5
 
 
 
-*output in given .dot file*
+*output in .dot file*
 
 ```
 graph tree {
