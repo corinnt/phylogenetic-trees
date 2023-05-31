@@ -22,7 +22,7 @@ to visualize the clustering pattern.
 
 ### Example:
 
-*distance matrix `sample.dist`*
+distance matrix `sample.dist`
 ```
 a b 1.5
 a c 1.5
@@ -30,7 +30,7 @@ b c 1.5
 ```
 
 
-*output in terminal*
+output in terminal
 
 ```
 ((a,b),c)
@@ -38,7 +38,7 @@ b c 1.5
 
 
 
-*output in .dot file*
+output in .dot file
 
 ```
 graph tree {
